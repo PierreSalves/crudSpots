@@ -37,7 +37,7 @@ namespace ApiPontosTuristicos.Controllers
         }
 
         [HttpGet("filterSpots")]
-        public async Task<IActionResult> filterSpots(string filter)
+        public async Task<IActionResult> filterSpots(string filter = "")
         {
             try
             {
