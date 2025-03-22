@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import logo from '../logo.svg';
 
-export const header = () => {
+export const Header = () => {
   return (    
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>        
