@@ -1,15 +1,11 @@
 import { formHandler } from '../handlers/formHandler.js';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
 import React, { useState, useEffect } from 'react';
 import { SpotCard } from './spotCard.js';
 import Swal from 'sweetalert2'
 
 export const FilterForm = () => {
     const [spots, setSpots] = useState([]);
-
-    function CreateCard(spot) {
-        setSpots([...spots, spot]);
-    }
 
     return (
         <Container>
@@ -33,10 +29,8 @@ export const FilterForm = () => {
                                             text: 'Algo deu errado!',
                                         })
                                     } else {
-                                        response.spots.map((spot, index) => {
-                                            CreateCard(spot);
-                                        });
-
+                                        setSpots(response.spots);
+                                       
                                         // Swal.fire({
                                         //     icon: 'success',
                                         //     title: 'Buscando...',
@@ -53,13 +47,25 @@ export const FilterForm = () => {
                     </Col>
                 </Row>
             </Form>
-            <Row id='cardsPlace'>
+            <br></br>
+            <div id='cardsPlace'>
                 {
                     spots.map((spot, index) => (
-                        <SpotCard key={index} spot={spot} />
+                        <Row>
+                            <Card className='col-12' key={index}>
+                                <Card.Body>
+                                    <Card.Title>{spot.spotname}</Card.Title>
+                                    <Card.Text>
+                                        {spot.spotdescription}
+                                    </Card.Text>
+                                    <Button variant="secondary">Ver detalhes</Button>
+                                </Card.Body>
+                            </Card>
+                            <p></p>
+                        </Row>
                     ))
                 }
-            </Row>
+            </div>
         </Container>
     );
 }
