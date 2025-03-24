@@ -44,8 +44,8 @@ export function ModalAddSpot({ show, onClose }) {
     }, [selectedState]);
 
     return (
-        <Modal show={show} onHide={onClose} backdrop="static" keyboard={false}>
-            <Form id="addSpotForm" method="post" /* action={"https://localhost:7181/api/Spots/insertSpot"} */ onSubmit={handleSubmit}>
+        <Modal show={show} onHide={onClose} backdrop="static" keyboard={false} size="lg">
+            <Form id="addSpotForm" method="post" onSubmit={handleSubmit}>
                 <Modal.Header closeButton>
                     <Modal.Title>Adicionar Ponto Turístico</Modal.Title>
                 </Modal.Header>
@@ -73,39 +73,7 @@ export function ModalAddSpot({ show, onClose }) {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <Form.Group controlId="searchInput">
-                                <Form.Label>Descricao</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Digite a descrição"
-                                    name='spotDescription'
-                                    value={spotDescription}
-                                    onChange={(e) => setSpotDescription(e.target.value)}
-                                    maxLength={100}
-                                    required
-                                />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Form.Group controlId="searchInput">
-                                <Form.Label>Localização</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Digite a referência"
-                                    name='spotReference'
-                                    value={spotReference}
-                                    onChange={(e) => setSpotReference(e.target.value)}
-                                    maxLength={100}
-                                    required
-                                />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
+                        <Col className="col-4">
                             <Form.Group controlId="stateInput">
                                 <Form.Label>Estado</Form.Label>
                                 <Form.Select
@@ -137,8 +105,6 @@ export function ModalAddSpot({ show, onClose }) {
                                 </Form.Control>
                             </Form.Group>
                         </Col>
-                    </Row>
-                    <Row>
                         <Col>
                             <Form.Group controlId="cityInput">
                                 <Form.Label>Cidade</Form.Label>
@@ -174,6 +140,40 @@ export function ModalAddSpot({ show, onClose }) {
                             </Form.Group>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <Form.Group controlId="searchInput">
+                                <Form.Label>Localização</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Digite a referência"
+                                    name='spotReference'
+                                    value={spotReference}
+                                    onChange={(e) => setSpotReference(e.target.value)}
+                                    maxLength={100}
+                                    required
+                                />
+                            </Form.Group>
+                        </Col>
+                    </Row>     
+                    <Row>
+                        <Col>
+                            <Form.Group controlId="searchInput">
+                                <Form.Label>Descricao</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    type="text"
+                                    placeholder="Digite a descrição"
+                                    name='spotDescription'
+                                    value={spotDescription}
+                                    onChange={(e) => setSpotDescription(e.target.value)}
+                                    maxLength={100}
+                                    required
+                                    rows={3}
+                                />
+                            </Form.Group>
+                        </Col>
+                    </Row>                                   
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={onClose}>

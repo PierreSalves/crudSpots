@@ -12,12 +12,19 @@ export const BodyForm = () => {
 
     const [showModalAddSpot, setShowModalAddSpot] = useState(false);
     const [showModalViewSpot, setShowModalViewSpot] = useState(false);
+    const [selectedSpotId, setSelectedSpotId] = useState(null);
 
     const handleOpenModalAddSpot = () => setShowModalAddSpot(true);
     const handleCloseModalAddSpot = () => setShowModalAddSpot(false);
 
-    const handleOpenModalViewSpot = () => setShowModalViewSpot(true);
-    const handleCloseModalViewSpot = () => setShowModalViewSpot(false);
+    const handleOpenModalViewSpot = (spotId) => {
+        setShowModalViewSpot(true);
+        setSelectedSpotId(spotId);
+    }
+    const handleCloseModalViewSpot = () => {
+        setShowModalViewSpot(false);
+        setSelectedSpotId(null);
+    }
 
     async function listSpots() {
         await formHandler('get', 'https://localhost:7181/api/Spots/listSpots', 'searchForm')
@@ -70,7 +77,7 @@ export const BodyForm = () => {
                         &nbsp;&nbsp;
                         <Button variant="success" type="button" onClick={handleOpenModalAddSpot}>
                             <i className="bi bi-plus-circle" />&nbsp;
-                            Cadastro um Ponto Turístico
+                            Cadastrar um Ponto Turístico
                         </Button>
                     </Col>
                 </Row>
@@ -80,14 +87,14 @@ export const BodyForm = () => {
             <div id='cardsPlace'>
                 {
                     spots.map((spot, index) => (
-                        <div key={index}>
+                        <div key={spot.spotid}>
                             <Card className='col-12'>
                                 <Card.Body>
                                     <Card.Title>{spot.spotname}</Card.Title>
                                     <Card.Text>
                                         {spot.spotdescription}
                                     </Card.Text>
-                                    <Button variant="secondary" onClick={handleOpenModalViewSpot}>Ver detalhes</Button>
+                                    <Button variant="secondary" onClick={() => { handleOpenModalViewSpot(spot.spotid) }}>Ver detalhes</Button>
                                 </Card.Body>
                             </Card>
                             <div><br></br></div>
@@ -95,7 +102,7 @@ export const BodyForm = () => {
                     ))
                 }
             </div>
-            <ModalViewSpot show={showModalViewSpot} onClose={handleCloseModalViewSpot} />
+            <ModalViewSpot show={showModalViewSpot} onClose={handleCloseModalViewSpot} spotid={selectedSpotId}/>
         </Container>
     );
 }
