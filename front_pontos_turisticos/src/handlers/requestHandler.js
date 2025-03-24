@@ -2,6 +2,9 @@ import axios from 'axios';
 export const requestHandler = async (method, url, body = null) => {
     try {
         const options = {
+            headers: {
+                'Content-Type': 'application/json'
+            },
             withCredentials: true,
             method: method.toLowerCase(),
             url: url,
