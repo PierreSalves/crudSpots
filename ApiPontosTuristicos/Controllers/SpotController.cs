@@ -22,7 +22,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = "call sp_get_all_spots();";
+                var query = "execute sp_get_all_spots;";
                 var result = dbConnection.Execute(query);
 
                 return Ok(new { message = "Operation completed successfully!", spots = result });
@@ -43,7 +43,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = $"call sp_filter_spots('{filter}');";
+                var query = $"execute sp_filter_spots '{filter}'";
                 var result = dbConnection.Execute(query);
 
                 if (result == null)
@@ -70,7 +70,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = $"call sp_get_spot_by_id({spotid});";
+                var query = $"execute sp_get_spot_by_id {spotid};";
                 var result = dbConnection.Execute(query);
 
                 if (result == null)
@@ -97,7 +97,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = $"call sp_insert_spot(" +
+                var query = $"execute sp_insert_spot " +
                             $"'{spotDto.SpotName}', " +
                             $"'{spotDto.SpotDescription}', " +
                             $"'{spotDto.SpotReference}', " +
@@ -105,7 +105,7 @@ namespace ApiPontosTuristicos.Controllers
                             $"'{spotDto.SpotCity.CityName}', " +
                             $"{spotDto.SpotState.StateId}, " +
                             $"'{spotDto.SpotState.StateName}', " +
-                            $"'{spotDto.SpotState.StateAbbreviation}');";
+                            $"'{spotDto.SpotState.StateAbbreviation}';";
                 var result = dbConnection.Execute(query);
 
                 return Ok(new { message = "Operation completed successfully!", insertedSpot = result });
@@ -124,7 +124,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = $"call sp_edit_spot(" +
+                var query = $"execute sp_edit_spot " +
                             $"'{spotid}', " +
                             $"'{spotDto.SpotName}', " +
                             $"'{spotDto.SpotDescription}', " +
@@ -133,7 +133,7 @@ namespace ApiPontosTuristicos.Controllers
                             $"'{spotDto.SpotCity.CityName}', " +
                             $"{spotDto.SpotState.StateId}, " +
                             $"'{spotDto.SpotState.StateName}', " +
-                            $"'{spotDto.SpotState.StateAbbreviation}');";
+                            $"'{spotDto.SpotState.StateAbbreviation}';";
                 var result = dbConnection.Execute(query);
 
 
@@ -153,7 +153,7 @@ namespace ApiPontosTuristicos.Controllers
             {
 
                 var dbConnection = new DBConnection();
-                var query = $"call sp_delete_spot({spotid});";
+                var query = $"execute sp_delete_spot {spotid};";
                 var result = dbConnection.Execute(query);
 
                 return Ok(new { message = "Operation completed successfully!", deletedSpot = spotid });

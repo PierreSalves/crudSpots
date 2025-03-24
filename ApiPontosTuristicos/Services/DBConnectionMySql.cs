@@ -1,15 +1,13 @@
+using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace ApiPontosTuristicos.Services
 {
-    public class DBConnection
+    public class DBConnectionMySql
     {
         private readonly string _connectionString;
 
-        public DBConnection()
+        public DBConnectionMySql()
         {
             var host = Environment.GetEnvironmentVariable("DB_HOST");
             var port = Environment.GetEnvironmentVariable("DB_PORT");
@@ -17,28 +15,26 @@ namespace ApiPontosTuristicos.Services
             var user = Environment.GetEnvironmentVariable("DB_USER");
             var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
-            _connectionString = $"Server={host};Database={database};Integrated Security=True;Encrypt=False;";
-
+            _connectionString = $"server={host};port={port};database={database};user={user};password={password};";
         }
 
-        public object Execute(string query, SqlParameter[] parameters = null)
+        public object Execute(string query, MySqlParameter[] parameters = null)
         {
             try
             {
-                using (var connection = new SqlConnection(_connectionString))
+                using (var connection = new MySqlConnection(_connectionString))
                 {
                     connection.Open();
 
-                    using (var command = new SqlCommand(query, connection))
+                    using (var command = new MySqlCommand(query, connection))
                     {
                         if (parameters != null)
                         {
                             command.Parameters.AddRange(parameters);
                         }
 
-                        // Verifica se a consulta é uma execução de procedure
-                        if (command.CommandText.StartsWith("EXEC", StringComparison.OrdinalIgnoreCase) ||
-                            command.CommandText.StartsWith("EXECUTE", StringComparison.OrdinalIgnoreCase))
+                        // VALIDAÇÃO PARA SÓ EXECUTAR PROCEDURES
+                        if (command.CommandText.StartsWith("call", StringComparison.OrdinalIgnoreCase))
                         {
                             using (var reader = command.ExecuteReader())
                             {
@@ -58,11 +54,11 @@ namespace ApiPontosTuristicos.Services
                             }
                         }
 
-                        return false;
+                         return false;
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine($"Erro ao executar a consulta: {ex.Message}");
                 throw;
