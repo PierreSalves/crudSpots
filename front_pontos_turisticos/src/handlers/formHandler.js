@@ -30,14 +30,7 @@ export const formHandler = async (method, action, idform) => {
         for (const pair of formData.entries()) {
             body[pair[0]] = pair[1];
         }
-
-        console.log(formToJSON(body));
-
-
-        // const structuredBody = formToJSON(body);
-
-        const structuredBody = body;
-
+        const structuredBody = formToJSON(body);
         const data = await requestHandler(method, action, structuredBody);
         return data;
 

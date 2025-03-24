@@ -18,9 +18,11 @@ export function ModalAddSpot({ show, onClose }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        
-        await formHandler('post', 'https://localhost:7181/api/Spots/insertSpot', 'addSpotForm')
-        // onClose();
+
+        await formHandler('post', 'https://localhost:7181/api/Spots/insertSpot', 'addSpotForm').then(response => {
+            onClose();
+            window.location.reload();
+        });
     }
 
     useEffect(() => {
@@ -124,13 +126,13 @@ export function ModalAddSpot({ show, onClose }) {
                                 <Form.Control
                                     name='spotState.stateName'
                                     type='hidden'
-                                    value={selectedState?.nome}
+                                    value={states.find(state => state.id == selectedState)?.nome}
                                 >
                                 </Form.Control>
                                 <Form.Control
                                     name='spotState.stateAbbreviation'
                                     type='hidden'
-                                    value={selectedState?.sigla}
+                                    value={states.find(state => state.id == selectedState)?.sigla}
                                 >
                                 </Form.Control>
                             </Form.Group>
@@ -160,7 +162,7 @@ export function ModalAddSpot({ show, onClose }) {
                                 <Form.Control
                                     name='spotCity.cityName'
                                     type='hidden'
-                                    value={selectedCity?.nome}
+                                    value={cities.find(city => city.id == selectedCity)?.nome}
                                 >
                                 </Form.Control>
                                 <Form.Control

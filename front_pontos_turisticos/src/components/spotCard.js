@@ -1,7 +1,7 @@
 import { Row, Col, Button, Card } from 'react-bootstrap'
 export const SpotCard = (spot, index) => {
-    <p>
-        <Card className='col-12' key={index}>
+    <div key={index}>
+        <Card className='col-12'>
             <Card.Body>
                 <Card.Title>{spot.spotname}</Card.Title>
                 <Card.Text>
@@ -10,5 +10,6 @@ export const SpotCard = (spot, index) => {
                 <Button variant="secondary">Ver detalhes</Button>
             </Card.Body>
         </Card>
-    </p>
+        <div><br></br></div>
+    </div>
 }
