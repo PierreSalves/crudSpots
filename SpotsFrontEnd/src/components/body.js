@@ -46,7 +46,7 @@ export const BodyForm = () => {
 
     return (
         <Container>
-            <Form id="searchForm">
+            <Form id="searchForm" className='mt-3'>
                 <Row>
                     <Col>
                         <Form.Group controlId="searchInput">
@@ -68,9 +68,6 @@ export const BodyForm = () => {
                                             })
                                         } else {
                                             setSpots(response.spots);
-                                            for (let i = 1; i <= response.spots[0].qtdPaginas; i++) {
-                                                setPageNumbers(i); 
-                                            }
                                         }
                                     });
                             } else {

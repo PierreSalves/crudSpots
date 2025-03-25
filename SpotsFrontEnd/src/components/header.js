@@ -5,9 +5,9 @@ import logo from '../logo.svg';
 
 export const Header = () => {
   return (    
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark">
       <Container>        
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" className='text-light'>
             <Image src={logo} fluid height={50} width={50}/>
             &nbsp; Cadastro de Pontos Turísticos
         </Navbar.Brand>
