@@ -99,7 +99,7 @@ export const BodyForm = () => {
                                 <Card.Body>
                                     <Card.Title>{spot.spotname}</Card.Title>
                                     <Card.Text>
-                                        {spot.spotdescription}
+                                        {spot.spotreference}
                                     </Card.Text>
                                     <Button variant="secondary" size='sm' onClick={() => { handleOpenModalViewSpot(spot.spotid) }}>Ver detalhes</Button>
                                 </Card.Body>
