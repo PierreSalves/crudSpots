@@ -35,11 +35,11 @@ Abra a pasta ScriptsBanco/SQL_SERVER e execute os arquivos na sequência no banc
 
 ## Tutorial de instalação do projeto
 
-### 1. Instala o o .NET 6.0
+### 1. Instale o .NET 6.0
 
 Acesse o site da Microsoft e [baixe o .NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0).
 
-### 2. Instala o o Node.js 14.16.0
+### 2. Instale o Node.js 14.16.0
 
 Acesse o site do Node.js e [baixe o Node.js 14.16.0](https://nodejs.org/en/download/).
 
