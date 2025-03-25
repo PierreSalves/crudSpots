@@ -1,0 +1,22 @@
+ 1 - Verifique se o carro está parado num lugar plano;
+ 2 - Certifique-se de que o freio de mão esteja puxado e que o carro esteja engatado;
+ 3 - Identifique o pneu furado;
+ 4 - Verifique se o estepe está cheio, se sim prossiga;
+ 5 - Sinalize o local utilizando o triângulo de sinalização;
+ 6 - Retire a chave de roda, o macaco e o estepe do porta malas, ou do compartimento específico dependendo do modelo do veículo;
+ 7 - Posicione o macaco embaixo do carro no local indicado mais próximo do pneu furado;
+ 8 - Certifique-se de que o macaco esteja bem apoiado numa superfície estável;
+ 9 - Gire a alavanca do macaco no sentido horário até que o suporte do macaco apoie o carro levemente;
+10 - Afrouxe os parafusos da roda utilizando a chave de roda, girando no sentido anti-horário;
+11 - Após afrouxar todos os parafusos da roda, gire a alavanca do macaco no sentido horário até que o pneu fique suspenso;
+12 - Retire os parafusos da roda;
+13 - Retire a roda com o pneu furado;
+14 - Coloque a roda com o estepe onde estava a roda com o pneu furado;
+15 - Coloque os parafusos novamente na roda recém colocada e aperte os parafusos com a chave de roda no sentido horário;
+16 - Gire a alavanca do macaco no sentido anti-horário até que o pneu fique firme no chão;
+17 - Faça o reaperto dos parafusos da roda com a chave de roda girando no sentido horário;
+18 - Gire a alavanca do macaco no sentido anti-horárioa té que ele se feche completamente;
+19 - Guarde a chave de roda, o macaco e o pneu furado no porta-malas;
+20 - Busque o triângulo de sinalização e guarde-o também.
+
+
