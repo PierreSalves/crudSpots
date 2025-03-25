@@ -18,6 +18,7 @@ namespace ApiPontosTuristicos.Services
             var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
             _connectionString = $"Server={host};Database={database};Integrated Security=True;Encrypt=False;";
+            // _connectionString = $"server={host};port={port};database={database};user={user};password={password};";
 
         }
 
