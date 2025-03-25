@@ -45,11 +45,11 @@ Acesse o site do Node.js e [baixe o Node.js 14.16.0](https://nodejs.org/en/downl
 
 ### 3. Abra o Visual Studio Code
 
-Abra o Visual Studio Code e instale as extens es necessárias para o desenvolvimento do projeto.
+Abra o Visual Studio Code e instale as extensões necessárias para o desenvolvimento do projeto.
 
 ### 4. Clone o repositório
 
-Clone o reposit rio do projeto com o comando `git clone https://github.com/PierreSalves/crudSpots`.
+Clone o repositório do projeto com o comando `git clone https://github.com/PierreSalves/crudSpots`.
 
 ### 5. Acesse a pasta do projeto
 
