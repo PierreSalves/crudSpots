@@ -77,7 +77,7 @@ No campo DB_DATABASE coloque o nome do banco de dados criado.
 ![alt text](launchSettings.png)
 ---
 
-Novos campos de conexão podem ser configurados conforme a instalação do SQL SERVER
+Novos campos de conexão podem ser configurados conforme a instalação do SQL SERVER.
 Modifique a connectionString conforme necessário.
 
 ![alt text](dbSettings.png)
