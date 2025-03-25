@@ -71,17 +71,17 @@ Abra o Visual Studio 2019 e abra o projeto `ApiPontosTuristicos.sln`.
 ### 9. Configure o acesso da API com o Banco de Dados
 
 Edite os campos DB_HOST e DB_DATABASE localizados no arquivo /SpotsApi/Properties/launchSettings.json,
-No campo DB_HOST coloque o nome do servidor SQLSERVER
+No campo DB_HOST coloque o nome do servidor SQLSERVER.
 No campo DB_DATABASE coloque o nome do banco de dados criado.
----
+
 ![alt text](launchSettings.png)
 ---
 
 Novos campos de conexão podem ser configurados conforme a instalação do SQL SERVER
----
+Modifique a connectionString conforme necessário.
+
 ![alt text](dbSettings.png)
 ---
-Modifique a connectionString conforme necessário.
 
 ### 10. Execute a API
 
