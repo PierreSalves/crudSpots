@@ -30,12 +30,10 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_HOST": "localhost",
-        "DB_PORT": "3306",
-        "DB_DATABASE": "db_spots",
-        "DB_USER": "root",
-        "DB_PASSWORD": "0990",
+        "DB_HOST": "A315-42G",
+        "DB_DATABASE": "db_spots"
       }
     }
   }
 }
+
