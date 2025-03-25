@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS cities (
 CREATE TABLE IF NOT EXISTS spots (
 	spotid INT AUTO_INCREMENT PRIMARY KEY,
 	spotname VARCHAR(100) NOT NULL,
-	spotdescription VARCHAR(255) NOT NULL,
+	spotdescription VARCHAR(100) NOT NULL,
 	spotreference VARCHAR(100),
 	spotcityid INT NOT NULL,
 	spotstateid INT NOT NULL,
